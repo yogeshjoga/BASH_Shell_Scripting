@@ -21,6 +21,7 @@ Started again learning shell scripting
 5 - bash functions
 6 - Environment variables
 ```
+
 ## Bash String Manipulation
 ```
 1 - bash split string
@@ -29,6 +30,7 @@ Started again learning shell scripting
 4 - bash replace string
 5 - bash substring
 ```
+
 ## Bash Files and Directories
 ```
 1 - bash Files _ Directories
@@ -37,6 +39,7 @@ Started again learning shell scripting
 4 - bash read file line by line
 5 - bash append to file
 ```
+
 ## Bash - Intermediate Level
 ```
 1 - bash arguments
@@ -45,6 +48,7 @@ Started again learning shell scripting
 4 - bash redirection
 5 - Pipes
 ```
+
 ## Bash - Advance Level
 ```
 1 - Catching Return codes from programs
