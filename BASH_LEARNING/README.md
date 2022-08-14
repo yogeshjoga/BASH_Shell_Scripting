@@ -1,5 +1,6 @@
 # BASH PART ONE : 1 BASICS AND LITTLE SCRIPTS
 ```bash
+        #!/bin/bash
 
 ```
 # Basic fundamentals of BASH_SCRIPTING
@@ -25,15 +26,9 @@
                     #!/usr/bin/php: It is used to execute the file using the PHP command-line interpreter.
                     #!/usr/bin/python -O: It is used to execute using Python with optimizations to code.
                     #!/usr/bin/ruby: It is used to execute using Ruby.
-
         ABT_SHEBANG
-
-
-
-
 ```
 # Simple Hello World Script 
-
 ```bash
         #!/bin/bash
         echo "Hello the World!"
@@ -402,71 +397,175 @@
 # Combine Three Strings In One Line With Variables 
 ```bash
         #!/bin/bash
-
+        var1="HELLO THE WORLD"
+        var2="this is bash"
+        var3="hi this is yogesh joga"
+        var4="${var1}${var2}${var3}"
+        echo var4
 ```
 # Plus Equal Operator Combine Strings 
 ```bash
         #!/bin/bash
+        var1="HELLO THE WORLD"
+        var2="this is bash"
+        var1+="$var2"
+        echo "$var1"
 
 ```
 # Create Multi-Line String Variable with HEREDOC 
 ```bash
         #!/bin/bash
+        var=$(cat<<'END_HEREDOC'
+        HERE WE COULD WRITE ANYTHING 
+        HER 
+        END_HEREDOC
+        )
+        echo "$var"
 
 ```
 # Cat Multi-Line HEREDOC Text 
 ```bash
         #!/bin/bash
-
+        cat<<YOGI
+        HELLO THIS IS THE YOGESH 
+        I WILL TEACH YOU LINUX : $PWD # this is present working dir
+        WITH BASH SCRIPTING LANG
+        : $(whoami) # admin name it will retrive 
+        YOGI
 ```
 # If Conditional Statement 
 ```bash
         #!/bin/bash
-
+        # if condition to control the flow the code excution 
+        var=10
+        # must mentain the spaces both sides in if condition 
+        if[ $var -gt 8 ]
+        then
+                echo "10 is grather then 8"
+        fi
 ```
 # Logical And in Conditional Statement 
 ```bash
         #!/bin/bash
+        # logical AND && double And symbols
+        var=10
+        if[[ $var -gt 9 ]] && [[ $var -lt 5 ]];
+        then 
+                echo "must true both case's, if both r true it will excuted! "
+        fi
 
 ```
 # Logical Or in Conditional Statement 
 ```bash
         #!/bin/bash
+        # logical or || double pipe symbol
+        var=10
+        if[[ $var -gt 23 ]] || [[ $var -lt 7 ]];
+        then 
+                echo "if any one is true it will excuted"
+        fi
 
 ```
 # If Elif Else Conditional Statement 
 ```bash
         #!/bin/bash
-
+        # graded sheet for student's
+        # let's go buddy's
+        # ge mean gether then equalto
+        marks=60
+        if[ $marks -ge 90 ]
+        then
+                echo "Excellent student"
+        elif [ $marks -ge 60 ]
+        then
+                echo "Good student"
+        elif [ $marks -ge 50 ]
+        then
+                echo "Satisfactory"
+        else
+                echo "Not okay FAIL!"
+        fi
 ```
 # Nesting If Conditions 
 ```bash
         #!/bin/bash
+        var=10
+        if[ $var -gt 9 ]
+        then
+                if[ $var -lt 5 ]
+                then
+                        echo "the number is below 5"
+                fi
+        fi
 
 ```
 # Equal vs Double Equal Operator 
 ```bash
         #!/bin/bash
-
+        var1="hello"
+        var2="world"
+        if[ $var1 = $var2 ]
+        then 
+                if[ $var1 == $var2 ]
+                then
+                        echo "both are same strings"
+                fi
+        else
+                echo "both strings are not same"
+        fi
 ```
 # Test Not Equal Strings 
 ```bash
         #!/bin/bash
+        var1="hello"
+        var2="world"
+         if[[ $var1 != $var2 ]]
+        then
+                echo "both are not same strings"
+               
+        else
+                echo "both strings are same"
+        fi
 
 ```
 # Test Two Strings Before or After alphabetically 
 ```bash
         #!/bin/bash
+        var1="hello"
+        var2=""hello"
+        if[[ $var1 == $var2 ]]
+        then
+                echo "both are same strings alphabetically"
+               
+        else
+                echo "both strings are not same alphabetically"
+        fi
 
 ```
 # Test String is Null 
 ```bash
         #!/bin/bash
+        var1="hello"
+        if[[ $var1 == '' ]]
+        then
+                echo "the string is null"
+               
+        else
+                echo "the string is not null"
+        fi
 
 ```
 # Test String is Not-Null
 ```bash
         #!/bin/bash
+        var1="hello"
+        if[[ $var1 == '' ]]
+        then
+                echo "the string is null"
+               
+        else
+                echo "the string is not null"
+        fi
 
 ```
 # Test Numerical Comparisons Greater then, Less then 
@@ -492,35 +591,138 @@
 # Test File Exists 
 ```bash
         #!/bin/bash
+        file=file.txt
+        if[ -f "$file" ]
+        then
+                echo "$file exists"
+        else
+                echo "$file doesn't exist"
+        fi
 
 ```
 # Test File Is Not Zero Size 
 ```bash
         #!/bin/bash
+        file=file.txt
+        if[ -s "$file" ]
+        then
+                echo "file is not of zero size"
+        else
+                echo "file is zero size it's fresh file"
+        fi
 
 ```
 # Test File Is A Directory 
 ```bash
         #!/bin/bash
+        path=dir
+        if[[ -d $path ]]
+        then 
+                echo "$path is a dir and not a file"
+        elif [[ -f $path ]]
+        then
+                echo "$path is a file and not a dir"
+        else
+                echo "$path is invalid"
+        fi
 
 ```
 # File Is A Symbolic Link 
 ```bash
         #!/bin/bash
+        file=link1
+        fi[[ -L $file ]]
+        then
+                echo "$file is a symbolic link"
+        else
+                echo "$file is not a symbolic link"
+        fi
 
 ```
 # Test File Has Read Permission 
 ```bash
         #!/bin/bash
+        file=file.txt
+        if[ -r $file ]
+        then
+                echo "$file is read permission"
+        else
+                echo "$file is not allow to read permission"
+        fi
 
 ```
 # Test File Has Write Permission 
 ```bash
         #!/bin/bash
+        file=file.txt
+        if[ -w $file ]
+        then
+                echo "$file is write permission"
+        else
+                echo "$file is not allow to write permission"
+        fi
 
 ```
 # Test File Has Execute Permission 
 ```bash
         #!/bin/bash
+        file=file.txt
+        if[ -x $file ]
+        then
+                echo "$file is executable permission"
+        else
+                echo "$file is not allow to executable permission"
+        fi
+```
+
+# Case Conditional Statement with numbers
+```bash
+        #!/bin/bash
 
 ```
+# Case conditional statement with strings
+```bash
+        #!/bin/bash
+
+```
+# Case Conditional Statement with Wildcards
+```bash
+        #!/bin/bash
+
+```
+# Execute a command with backticks
+```bash
+        #!/bin/bash
+
+```
+# Execute a command in a dollar parenthesis variable
+```bash
+        #!/bin/bash
+
+```
+# Execute a command and capture STDOUT 
+```bash
+        #!/bin/bash
+
+```
+# Execute a command and capture STDERR
+```bash
+        #!/bin/bash
+
+```
+# Eeecute a command and capture return code
+```bash
+        #!/bin/bash
+
+```
+# Bash exec command Hello world
+```bash
+        #!/bin/bash
+
+```
+# Eval Command
+```bash
+        #!/bin/bash
+
+```
+
