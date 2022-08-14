@@ -182,118 +182,222 @@
 # Multi Word Variables Combinations with Quotes 
 ```bash
         #!/bin/bash
-        
-
+        hello="this is the yogesh"
+        dear="this is the linux"
+        clas s="${hello} ${dear}"
+        echo "${class}"
 ```
 # HOME variable 
 ```bash
+        # some of build in variables are there check into linux note
         #!/bin/bash
-
+        var_path=$HOME
+        echo "$var_path"
+        ls "$var_path"
 ```
 # USER variable 
 ```bash
         #!/bin/bash
-
+        var_path=$USER
+        echo "$var_path"
 ```
 # HOSTNAME variable 
 ```bash
         #!/bin/bash
-
+        var_path=$HOSTNAME
+        echo "$var_path"
 ```
 # Echo $HOME with Escape to Avoid Expansion 
 ```bash
         #!/bin/bash
-
+        # we can use the \ forward slash 
+        # to avoid the embedd links and quotes 
+        echo "\$HOME"
+        # run the script and see the output 
+        # you can understand a lil
 ```
 # Writing to file in HOME Directory Using HOME Environment Variable 
 ```bash
         #!/bin/bash
+        cd $HOME
+        echo "I like linux " > ./file.txt
+        cat file.txt
 
 ```
 # Simple Touch Command 
 ```bash
         #!/bin/bash
-
+        touch file.txt
+        ls
 ```
 # Create a Symbol Link, Write To Linked File, Cat file 
 ```bash
         #!/bin/bash
-
+        ln -s file.txt link1
+        ls
+        echo "now im writing inside the link1" >> link1
+        cat link1 
 ```
 # Chmod Command, Make Executable 
 ```bash
         #!/bin/bash
-
+        chmod +x file.txt
 ```
 # Chmod Command, Make Not-Writable, Try to Write to it 
 ```bash
         #!/bin/bash
-
+        chmod -w  file.txt
+         
 ```
 # Chown File To Different User, Run ls before, after
 ```bash
         #!/bin/bash
-
+        # bob is the user 
+        # command "sudo adduser bob"
+        chown bob file.txt
+        sudo chown bob file.txt
 ```
 # Underscore Variable, Touch File, Use Underscore Variable to Append to It 
 ```bash
         #!/bin/bash
-
+        my_var="hello yogesh"
+        touch file.txt
+        echo "$my_var" >> file.txt
+        cat file.txt
 ```
 # Let Command Arithmetic 
 ```bash
         #!/bin/bash
+        # init variables at a time 
+        let a=4 b=5 c=a+b
+        # calling variables
+        echo "$a $b $c"
 
 ```
 # 4 Basic Operators, Add, Subtract, Multiply, Divide 
 ```bash
         #!/bin/bash
+        # init variables
+        num1=10
+        num2=20
+        
+        # add
+        expr num1 + num2
+        # sub
+        expr num1 - num2
+        # multi star will not allow in bash scripting lang so we need put \  slash infront of star
+        expr num1 \* num2
+        # div
+        expr num1 / num2
 
 ```
 # Increment a variable 3 times with Increment Operator 
 ```bash
         #!/bin/bash
-
+        # increment the variable values 
+        var=10
+        echo $var
+        # start increment
+        var=$((var+=1))
+        echo $var
+        # 2nd time increment
+        var=$((var+=1))
+        echo $var
+        # 3rd time increment
+        var=$((var+=1))
+        echo $var
+        # printing every value after incrementing
 ```
 # Decrement a variable 3 times with Decrement Operator 
 ```bash
         #!/bin/bash
+         # decrement the variable values 
+        var=10
+        echo $var
+        # start decrement
+        var=$((var-=1))
+        echo $var
+        # 2nd time decrement
+        var=$((var-=1))
+        echo $var
+        # 3rd time decrement
+        var=$((var-=1))
+        echo $var
+        # printing every value after decrementing
 
 ```
 # Echo Number Modulus Second Number 
 ```bash
         #!/bin/bash
+        num1=10
+        num2=4
+        # it will give reminder value
+        echo "$(($num1 % $num2))"
 
 ```
 # Echo Number to Exponent of Second Number 
 ```bash
         #!/bin/bash
+        num=$((8**2))
+        echo "$num"
 
 ```
 # Expr Command for Math 
 ```bash
         #!/bin/bash
-
+        # exper function to make more math logics
+        num1=20
+        num2=10
+        # operation
+        # the expr command will perform action and print values also it is the advantage of this meth
+        expr num1 + num2
+        expr num1 - num2
+        expr num1 \* num2
+        expr num1 / num2
+        expr num1 % num2
 ```
 # Double Parenthesis for Math 
 ```bash
         #!/bin/bash
-
+        num1=200
+        num2=10
+        # operation
+        # this option will more complicated and we all are very lazy so we need shortcut only.....
+        echo "$((num1 - $num2))" # inline printing the values
+        echo "$((num1 + $num2))"
+        echo "$((num1 \* $num2))"
+        echo "$((num1 / $num2))"
+        echo "$((num1 % $num2))"
 ```
 # Double Parenthesis with Dollar Operator Assign to Variable
 ```bash
         #!/bin/bash
-
+        num=100
+        var=$((num+10))
+        echo $var
 ```
 # Multiplication has Precedence Over Addition Regardless of Order 
 ```bash
         #!/bin/bash
+        var=$((3*(2+1)))
+        echo "$var"
+
+        new_var=$((2+3(*3)))
+        echo $new_var
 
 ```
 # Combine Two Strings In One Line With Variables 
 ```bash
         #!/bin/bash
-
+        var1="HELLO THE WORLD"
+        var2="this is bash"
+        var3="hi this is yogesh joga"
+        # two strings concatnation by using variables
+        var4 ="${var1} ${var2} ${var3}"
+        # concat new
+        var1+="$var2"
+        echo "$var1"
+        echo "$var4"
 ```
 # Combine Three Strings In One Line With Variables 
 ```bash
