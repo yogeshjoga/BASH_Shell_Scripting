@@ -2,7 +2,9 @@
 Started again learning shell scripting
 
 # IM STARTED BASH LANG
-  
+
+
+<iframe src='https://www.xmind.app/embed/WwtB/' width='750' height='1000' frameborder='0' scrolling='no' allowfullscreen="true"></iframe>
   
 # Getting Started with Bash
 
